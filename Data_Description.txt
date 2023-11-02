@@ -1,0 +1,44 @@
+##Data Description
+##==========================================
+## GTEx data https://www.gtexportal.org/home/
+
+Normal lung tissue
+
+GTEx_Lung.csv - gene expression from normal lung. Genes in rows, samples in column. Sample ID contains patient ID
+GTEx_patients.csv - info about patients, patients in rows
+	$ SUBJID : patient name, is included in sample name ID
+	$ SEX    : 1-male, 2-female
+	$ AGE    : chr  "60-69" "50-59" "60-69" "60-69" ...
+	$ DTHHRDY: int  4 0 1 3 0 0 2 NA 2 2 ...
+
+
+##==========================================
+## TCGA data https://portal.gdc.cancer.gov/
+
+Tumour and normal lung tissue from 2 TCGA datasets: LUAD (adenocarcinoma) and LUSC (squamous cell carcinoma)
+
+TCGA_Lung.csv - gene expression from cancer lungs. Genes in rows, samples in column. Sample ID contains patient ID
+TCGA_samples.csv  - info about samples, samples in rows. Some samples from the same patients - patient code: TCGA-xx-xxxx
+	$ SAMPLEID : sample ID, same as column in TCGA_Lung.csv
+	$ DATASET  : study name, LUAD or LUSC
+	$ SAMPLE   : histologically normal an cancer sample
+	$ HISTOLOGY: specific histology of the tumour
+	$ LOCATION : location of the biopsy 
+	$ SEX      : sex of the patients
+	$ AGE      : sex of the patients at diagnostics
+	$ TIMESURV : time of survival in days
+	$ EVENTSURV: event happened as "TIMESURV": "alive" - left the study (censored) "dead" - dead
+
+##==========================================
+## Questions
+
+1. Data preprocessing and clustering: 
+	1.1. build a unified datasets (same genes/features only)
+	1.2. compare distributions for GTEx and TCGA datasets
+	1.3. compare PCA, identify clusters
+	1.4. can we normalize TCGA / GTEx in the way, that TCGA:normal and GTEx data points form a single cluster?
+	
+2. Data classification
+	2.1. using normalized data find best predictors (genes) for 3-class classification: AC(adenocarcinoma: LUAD, tumor), SCC(squamous cell carcinoma: LUSC, tumor), Lung(normal lung: LUAD, LUSC, normal)
+	2.2. investigate classification methods
+	
