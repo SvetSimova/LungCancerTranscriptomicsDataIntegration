@@ -18,7 +18,7 @@ It consists of:
 	-- L_Modelling_State.ipynb with investigation of classification models
 		(Question 2.2 from Data_Description.txt)
  3) My_Pred_Modelling.py file with additional functions that are used in several .ipynb files.
- 4) the last file is the Workflow_Review.docx with the intermediate results 
-	and the description of the whole workflow.
+ 4) Workflow_Review.pdf contains the description of the intermediate results 
+	and the whole workflow.
 
 This is a fairly fast and quite acceptable implementation of the assigned tasks.
